@@ -30,7 +30,8 @@
   "homepage": "https://github.com/RichardLitt/standard-readme",
   "dependencies": {
     "opencollective": "^1.0.3",
-    "opencollective-postinstall": "^2.0.3"
+    "opencollective-postinstall": "^2.0.3",
+    "@snyk/protect": "latest"
   },
   "coordinates": [
     52.5173031,
@@ -41,6 +42,9 @@
     "url": "https://opencollective.com/standard-readme"
   },
   "scripts": {
-    "postinstall": "opencollective-postinstall"
-  }
+    "postinstall": "opencollective-postinstall",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
+  },
+  "snyk": true
 }
